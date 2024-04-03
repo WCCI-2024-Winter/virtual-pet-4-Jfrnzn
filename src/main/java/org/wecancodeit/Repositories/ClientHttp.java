@@ -2,7 +2,6 @@ package org.wecancodeit.Repositories;
 
 import java.net.HttpURLConnection;
 
-
 import java.net.*;
 import java.io.*;
 
@@ -14,13 +13,13 @@ public abstract class ClientHttp {
         this.baseUrl = baseUrlString;
     }
 
-    protected String GetURL(String urlString) throws Exception {
+    protected String getURL(String urlString) throws Exception {
         HttpURLConnection connection = null;
         StringBuffer response = new StringBuffer();
-    
+
         try {
 
-            URL url = new URL(baseUrl);
+            URL url = new URL(baseUrl + urlString);
 
             connection = (HttpURLConnection) url.openConnection();
 
