@@ -17,7 +17,7 @@ public class AdoptersModel extends ContactModel {
      * @param city
      * @param zip
      * @param state
-     * @param phonenumber
+     * @param phoneNumber
      * @param email
      * @param imageUrl
      * @param petType
@@ -25,10 +25,10 @@ public class AdoptersModel extends ContactModel {
      * @return
      */
 
-    public AdoptersModel(String name, String address1, String address2, String city,
-            String zip, String state, String phonenumber, String email, String imageUrl, PetTypeEnum petType,
+    public AdoptersModel(Long id, String name, String address1, String address2, String city,
+            String zip, String state, String phoneNumber, String email, String imageUrl, PetTypeEnum petType,
             AdoptionStatusEnum adoptionStatus) {
-        super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
+        super(id,name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
         this.preferredPetType = petType;
         this.adoptionStatus = adoptionStatus;
     }

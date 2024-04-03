@@ -17,7 +17,6 @@ public class ShelterRepository extends ClientHttp {
 
     public ShelterModel getById(Long id) throws Exception {
         String model = getURL(id.toString());
-
         ShelterModel result = objectMapper.readValue(model, ShelterModel.class);
         return result;
     }
@@ -26,8 +25,7 @@ public class ShelterRepository extends ClientHttp {
         List<ShelterModel> shelterList = null;
         try {
             String jsonString = getURL(urlPath);
-            shelterList = objectMapper.readValue(jsonString, new TypeReference<List<ShelterModel>>() {
-            });
+            shelterList = objectMapper.readValue(jsonString, new TypeReference<List<ShelterModel>>(){});
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -9,7 +9,7 @@ public abstract class ContactModel {
     private String city;
     private String zip;
     private String state;
-    private String phonenumber;
+    private String phoneNumber;
     private String email;
 
     private String imageUrl;
@@ -17,16 +17,16 @@ public abstract class ContactModel {
     public ContactModel() {
     }
 
-    public ContactModel( String name, String address1, String address2, String city, String zip, String state,
-            String phonenumber, String email, String imageUrl) {
-      
+    public ContactModel(Long id, String name, String address1, String address2, String city, String zip, String state,
+            String phoneNumber, String email, String imageUrl) {
+        this.id=id;
         this.name = name;
         this.address1 = address1;
         this.address2 = address2;
         this.city = city;
         this.zip = zip;
         this.state = state;
-        this.phonenumber = phonenumber;
+        this.phoneNumber = phoneNumber;
         this.email = email;
         this.imageUrl = imageUrl;
     }
@@ -63,8 +63,8 @@ public abstract class ContactModel {
         return state;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public String getEmail() {
@@ -78,7 +78,7 @@ public abstract class ContactModel {
     @Override
     public String toString() {
         return "ContactModel [id=" + id + ", name=" + name + ", address1=" + address1 + ", address2=" + address2
-                + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phonenumber=" + phonenumber + ", email="
+                + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phoneNumber=" + phoneNumber + ", email="
                 + email + ", imageUrl=" + imageUrl + "]";
     }
 

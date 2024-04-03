@@ -1,7 +1,6 @@
 package org.wecancodeit.Models;
 
 import java.util.*;
-import jakarta.validation.constraints.Size;
 
 public class VolunteerModel extends ContactModel {
 
@@ -11,11 +10,15 @@ public class VolunteerModel extends ContactModel {
         super();
     }
 
-    public VolunteerModel(String name, String address1, String address2, String city,
-             String zip,
-            String state, String phonenumber, String email, String imageUrl) {
-        super(name, address1, address2, city, zip, state, phonenumber, email, imageUrl);
+    public VolunteerModel(Long id,String name, String address1, String address2, String city,
+            String zip, String state, String phoneNumber, String email, String imageUrl) {
+        super(id, name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
 
+    }
+
+    @Override
+    public String toString() {
+        return "VolunteerModel [shelterModel=" + shelterModel + "]";
     }
 
 }
