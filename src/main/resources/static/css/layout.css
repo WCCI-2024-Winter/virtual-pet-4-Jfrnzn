@@ -1,0 +1,23 @@
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+   
+}
+.headerFragment{
+    display: flex;
+    align-content: end;
+}
+table{
+     border-collapse: collapse;
+     
+     
+}
+td{
+    padding: 10px;
+}

@@ -1,4 +1,4 @@
-package org.wecancodeit.Models.Enums;
+package org.wecancodeit.virtualpet4.Models.Enums;
 
 public enum PetMoodEnum {
     EXCITED,

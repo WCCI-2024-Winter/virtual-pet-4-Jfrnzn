@@ -1,8 +1,10 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
 import java.util.ArrayList;
 
-import org.wecancodeit.Models.Enums.PetTypeEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
+
+
 
 //*base pet class */
 public abstract class PetModel {

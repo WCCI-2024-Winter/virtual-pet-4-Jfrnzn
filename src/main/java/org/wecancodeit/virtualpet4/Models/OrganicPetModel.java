@@ -1,11 +1,12 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
 import java.util.ArrayList;
 
-import org.wecancodeit.Models.Enums.PetHealthEnum;
-import org.wecancodeit.Models.Enums.PetMoodEnum;
-import org.wecancodeit.Models.Enums.PetTempermentEnum;
-import org.wecancodeit.Models.Enums.PetTypeEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetHealthEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetMoodEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTempermentEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
+
 
 //*model for non-robot pets 
 // id will pull from petmodel*/

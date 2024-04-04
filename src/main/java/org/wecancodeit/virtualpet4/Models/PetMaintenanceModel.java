@@ -1,8 +1,7 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
-import org.wecancodeit.Models.Enums.PetTaskEnum;
-import org.wecancodeit.Models.Enums.PetTypeEnum;
-
+import org.wecancodeit.virtualpet4.Models.Enums.PetTaskEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
 
 public class PetMaintenanceModel {
 

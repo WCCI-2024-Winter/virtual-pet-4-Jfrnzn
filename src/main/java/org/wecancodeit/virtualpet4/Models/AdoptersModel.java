@@ -1,7 +1,7 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
-import org.wecancodeit.Models.Enums.*;
-
+import org.wecancodeit.virtualpet4.Models.Enums.AdoptionStatusEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
 
 public class AdoptersModel extends ContactModel {
 

@@ -1,4 +1,4 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
 public abstract class ContactModel {
 

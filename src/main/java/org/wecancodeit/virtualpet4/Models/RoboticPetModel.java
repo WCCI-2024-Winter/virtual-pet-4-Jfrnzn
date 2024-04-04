@@ -1,9 +1,9 @@
-package org.wecancodeit.Models;
+package org.wecancodeit.virtualpet4.Models;
 
 import java.util.ArrayList;
 
-import org.wecancodeit.Models.Enums.PetTypeEnum;
-import org.wecancodeit.Models.Enums.RoboticHealthEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
+import org.wecancodeit.virtualpet4.Models.Enums.RoboticHealthEnum;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

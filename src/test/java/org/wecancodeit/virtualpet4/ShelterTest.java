@@ -4,8 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.wecancodeit.Models.ShelterModel;
-import org.wecancodeit.Repositories.ShelterRepository;
+import org.wecancodeit.virtualpet4.Models.ShelterModel;
+import org.wecancodeit.virtualpet4.Repositories.ShelterRepository;
+
 
 @SpringBootTest
 public class ShelterTest {

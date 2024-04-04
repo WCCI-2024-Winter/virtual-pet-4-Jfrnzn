@@ -5,27 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
 </head>
+<br>
 
+   
 <body>
+    <div class="headerFragment" th:replace="./fragments/headerFragment :: header"></div>
+     <div class="content">
     <h1>Shelters</h1>
+     
     <table border="1px">
         <tr th:each="shelter : ${shelters}">
             <td th:text="${shelter.name}"></td>
-            
             <td th:text="${shelter.address1}"></td>
             <td th:text="${shelter.address2}"></td>
             <td th:text="${shelter.city}"></td>
             <td th:text="${shelter.state}"></td>
             <td th:text="${shelter.phoneNumber}"></td>
             <td th:text="${shelter.zip}"></td>
-            <!-- <td><a class="btn" th:href="@{/{id}(id=${shelter.id})}">Detail</a></td>
+            <td><a class="btn" th:href="@{details/{id}(id=${shelter.id})}">Detail</a></td>
             <td><a class="btn" th:href="@{Edit/{id}(id=${shelter.id})}">Edit</a></td>
-            <td><a class="delete-btn" th:href="@{Delete/{id}(id=${shelter.id})}">Detail</a></td> -->
+            <td><a class="delete-btn" th:href="@{confirm/{id}(id=${shelter.id})}">Delete</a></td>
         </tr>
     </table>
 
     </tr>
+    </div>
+    <div th:replace="./fragments/footerFragment :: footer"></div>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-package org.wecancodeit.Repositories;
+package org.wecancodeit.virtualpet4.Repositories;
 
 import java.net.*;
 import java.io.*;
