@@ -1,12 +1,11 @@
 package org.wecancodeit.virtualpet4.Repositories;
 
-
-
 import java.io.IOException;
 import java.util.*;
 
 import org.wecancodeit.virtualpet4.Models.ShelterModel;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -28,14 +27,30 @@ public class ShelterRepository extends ClientHttp {
         List<ShelterModel> shelterList = null;
         try {
             String jsonString = getURL(urlPath);
-            shelterList = objectMapper.readValue(jsonString, new TypeReference<List<ShelterModel>>(){});
+            shelterList = objectMapper.readValue(jsonString, new TypeReference<List<ShelterModel>>() {
+            });
         } catch (IOException e) {
             e.printStackTrace();
         }
         return shelterList;
     }
 
-    // public ShelterModel deleteById(Long id){
+    public boolean deleteById(Long id) throws Exception{
+        deleteObject(id);
+        return true;
+    }
 
-    // }
+    public ShelterModel SaveShelter(ShelterModel model) throws Exception {
+        try {
+            String json = objectMapper.writeValueAsString(model);
+            String result = saveObject(json);
+            model = objectMapper.readValue(result, new TypeReference<ShelterModel>() {
+            });
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return model;
+
+    }
+
 }

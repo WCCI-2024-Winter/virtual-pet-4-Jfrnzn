@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<div th:if="${shelter.roboticPets.size()>0}"></div>
+<h2>Organic Pets</h2>
+
 <body>
-    
+    <table class="main_table" style="width:80%" border="1">
+        <thead>
+            <th class="main_td">Details</th>
+            <th class="main_td">Name</th>
+            <th class="main_td">Type</th>
+            <th class="main_td">Breed</th>
+            <th class="main_td">Age</th>
+            <th class="main_td">Health</th>
+            <th class="main_td">Mood</th>
+            <th class="main_td">Temperament</th>
+        </thead>
+        <tr th:each="pets : ${shelter.organicPets}">
+            <td class="main_td">
+                <a th:href="@{organicPets/{id}(id=$)}">
+                    <img*******>
+                </a>
+            </td>
+            <td class="main_td" th:text="${pets.name}"></td>       
+            <td class="main_td" th:text="${pets.petType}"></td>
+            <td class="main_td" th:text="${pets.breed}"></td>
+            <td class="main_td" th:text="${pets.petAge}"></td>
+            <td class="main_td" th:text="${pets.petHealth}"></td>
+            <td class="main_td" th:text="${pets.petMood}"></td>
+            <td class="main_td" th:text="${pets.petTemperament}"></td>
+        </tr>
+    </table>
+    <table class="main_table" style="width:80%" border="1">
+        <thead>
+            <th class="main_td">Details</th>
+            <th class="main_td">Name</th>
+            <th class="main_td">Type</th>
+            <th class="main_td">Model</th>
+            <th class="main_td">Manufacturer</th>
+            <th class="main_td">Energy</th>
+            <th class="main_td">Health</th>
+            <th class = "main_td">Img</th>
+            
+            <th class="main_td">Oil</th>
+        </thead>
+        <tr th:each="pets : ${shelter.organicPets}">
+            <td class="main_td">
+                <a th:href="@{organicPets/{id}(id=$)}">
+                    <img*******>
+                </a>
+            </td>
+            <td class="main_td" th:text="${pets.name}"></td>
+            <td class="main_td" th:text="${pets.petType}"></td>
+            <td class="main_td" th:text="${pets.model}"></td>
+            <td class="main_td" th:text="${pets.manufacturer}"></td>
+            <td class="main_td" th:text="${pets.petEnergy}"></td>
+            <td class="main_td" th:text="${pets.petOil}"></td>
+            <td class="main_td" th:text="${pets.petHealth}"></td>
+            <!-- <td class="main_td" th:img="${pets.petHealth}"></td> -->
+
+
+        </tr>
+    </table>
 </body>
+</div>
+<div th:replace="./fragments/footerFragment:: footer"></div>
+</body>
+
 </html>

@@ -25,9 +25,10 @@
             <td th:text="${shelter.state}"></td>
             <td th:text="${shelter.phoneNumber}"></td>
             <td th:text="${shelter.zip}"></td>
+
             <td><a class="btn" th:href="@{details/{id}(id=${shelter.id})}">Detail</a></td>
             <td><a class="btn" th:href="@{Edit/{id}(id=${shelter.id})}">Edit</a></td>
-            <td><a class="delete-btn" th:href="@{confirm/{id}(id=${shelter.id})}">Delete</a></td>
+            <td><a class="delete-btn" th:href="@{delete/confirmDelete/{id}(id=${shelter.id})}">Delete</a></td>
         </tr>
     </table>
 
