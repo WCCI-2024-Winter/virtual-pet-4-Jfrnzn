@@ -7,7 +7,16 @@
 </head>
 <body>
     <h1>Confirm delete</h1>
-    
-    <td><a class="delete-btn" th:href="@{delete/{id}(id=${shelter.id})}">Delete</a></td>
+    <table>
+        <tr>
+            <th>Name:</th>
+            <td th:text="${shelters.name}"></td>
+        </tr>
+      </table>
+
+   <!-- <div> <a class="delete-btn" th:href="@{/delete/{id}(id=${shelter.id})}">Delete</a></div>    -->
+
+
+
 </body>
 </html>

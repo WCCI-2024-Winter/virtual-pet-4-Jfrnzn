@@ -35,6 +35,8 @@ public class ShelterRepository extends ClientHttp {
         return shelterList;
     }
 
+  
+
     public boolean deleteById(Long id) throws Exception{
         deleteObject(id);
         return true;

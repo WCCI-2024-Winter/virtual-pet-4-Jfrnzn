@@ -35,7 +35,12 @@ public class ShelterModel extends ContactModel {
 
     }
 
-    public String getWebsite() {
+    public ShelterModel(long id, String name, String address1, String address2, String city, String zip, String state,
+            String phoneNumber, String email, String imageUrl) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public String getWebsite() { 
         return website;
     }
 

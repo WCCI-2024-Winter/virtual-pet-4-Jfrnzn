@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+
+<body>
+    <form action="#" th:action="@{/}" th:object="${task}" method="post">
+        <input type="hidden" th:field="*{taskId}" />
+        <label>Description</label>
+        <input type="text" th:field="*{Description}"><br>
+
+        <label> Name</label>
+        <select th:field="*{category}">
+            <option th:each="p : ${lstCategory}" th:value="${p}" th:text="${p}"></option>
+        </select><br>
+
+        <label>status</label>
+        <select th:field="*{status}">
+            <option th:each="p : ${lstStatus}" th:value="${p}" th:text="${p}"></option>
+        </select><br>
+
+        <label>priority</label>
+        <select th:field="*{priority}">
+            <option th:each="p : ${lstPriority}" th:value="${p}" th:text="${p}"></option>
+        </select><br>
+
+        <label>dueDate</label>
+        <input type="date" th:field="*{dueDate}"><br>
+
+        <label>Details</label>
+        <input type="text" th:field="*{details}"><br>
+
+        <button type="submit" th:href="@{save/{id}(id=${task.taskId})}">Submit Change</button>
+        <br>
+
+        <td>
+            <a th:href="@{/}">cancel</a>
+        </td>
+    </form>
+
+</body>
+
+</html>

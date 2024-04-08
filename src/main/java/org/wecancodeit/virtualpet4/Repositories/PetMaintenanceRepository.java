@@ -1,8 +1,26 @@
 package org.wecancodeit.virtualpet4.Repositories;
 
-import org.wecancodeit.virtualpet4.Models.OrganicPetModel;
+import java.io.IOException;
+import java.util.List;
+import org.wecancodeit.virtualpet4.Models.PetMaintenanceModel;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class PetMaintenanceRepository {
+public class PetMaintenanceRepository extends ClientHttp{
+    public PetMaintenanceRepository(String baseURLString) {
+        super(baseURLString);
+    }
+    private ObjectMapper objectMapper = new ObjectMapper();
 
-    //  Iterable<OrganicPetModel> findByBreed(String breed);
+Iterable<PetMaintenanceModel> findByName(String urlPath) throws Exception{
+    List<PetMaintenanceModel> maintenanceList = null;
+    try {
+        String jsonString = getURL(urlPath);
+        maintenanceList = objectMapper.readValue(jsonString, new TypeReference<List<PetMaintenanceModel>>() {
+        });
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return maintenanceList;
+}
 }
