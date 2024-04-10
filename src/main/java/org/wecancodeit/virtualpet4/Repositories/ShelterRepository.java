@@ -46,13 +46,14 @@ public class ShelterRepository extends ClientHttp {
         try {
             String json = objectMapper.writeValueAsString(model);
             String result = saveObject(json);
-            model = objectMapper.readValue(result, new TypeReference<ShelterModel>() {
-            });
-        } catch (Exception ex) {
+            model = objectMapper.readValue(result, new TypeReference<ShelterModel>() {});
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
         return model;
 
     }
+
+ 
 
 }

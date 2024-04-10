@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}">
+
 </head>
+
 <body>
+    <div th:replace="./fragments/headerFragment:: header"></div>
+    <br>
     <h1>Confirm delete</h1>
     <table>
-        <tr>
-            <th>Name:</th>
-            <td th:text="${shelters.name}"></td>
-        </tr>
-      </table>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td th:text="${shelter.name}"></td>
+            </tr>
+            <tr>
+                <th>Address 1:</th>
+                <td th:text="${shelter.address1}"></td>
+            </tr>
+            <tr>
+                <th>Address 2:</th>
+                <td th:text="${shelter.address2}"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td th:text="${{shelter.city}}"></td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+                <td th:text="${{shelter.zip}}"></td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td th:text="${{shelter.state}}"></td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td th:text="${{shelter.phoneNumber}}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td th:text="${{shelter.email}}"></td>
+            </tr>
+            <tr>
+                <th>Website</th>
+                <td th:text="${{shelter.website}}"></td>
+            </tr>
+        </table>
 
-   <!-- <div> <a class="delete-btn" th:href="@{/delete/{id}(id=${shelter.id})}">Delete</a></div>    -->
 
+        <div> <a class ="btn" th:href="@{/delete/{id}(id=${shelter.id})}">Delete</a>
+        <a class ="btn" th:href="@{/}">cancel</a></div>
 
+        <div th:replace="./fragments/footerFragment :: footer"></div>
 
 </body>
+
 </html>

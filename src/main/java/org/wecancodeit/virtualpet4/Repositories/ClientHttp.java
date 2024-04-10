@@ -2,7 +2,7 @@ package org.wecancodeit.virtualpet4.Repositories;
 
 import java.net.*;
 
-import org.wecancodeit.virtualpet4.Models.ShelterModel;
+
 
 import java.io.*;
 

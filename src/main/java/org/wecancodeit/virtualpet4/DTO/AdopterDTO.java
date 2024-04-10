@@ -1,8 +1,11 @@
 package org.wecancodeit.virtualpet4.DTO;
 
+import org.wecancodeit.virtualpet4.Models.Enums.PetTypeEnum;
+import org.wecancodeit.virtualpet4.Models.AdoptersModel;
 import org.wecancodeit.virtualpet4.Models.ShelterModel;
+import org.wecancodeit.virtualpet4.Models.Enums.AdoptionStatusEnum;
 
-public class ShelterDTO {
+public class AdopterDTO {
 
     private Long id;
     private String name;
@@ -14,13 +17,15 @@ public class ShelterDTO {
     private String phoneNumber;
     private String email;
     private String imageUrl;
-    public String website;
+    public PetTypeEnum preferredPetType;
+    public AdoptionStatusEnum adoptionStatus;
+    public ShelterModel shelterModel;
 
-    public ShelterDTO() {
+    public AdopterDTO() {
     }
 
-    public ShelterDTO(Long id, String name, String address1, String address2, String city, String zip, String state,
-            String phoneNumber, String email, String imageUrl, String website) {
+    public AdopterDTO(Long id, String name, String address1, String address2, String city, String zip, String state,
+            String phoneNumber, String email, String imageUrl) {
         this.id = id;
         this.name = name;
         this.address1 = address1;
@@ -31,10 +36,13 @@ public class ShelterDTO {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.imageUrl = imageUrl;
-        this.website = website;
+        this.preferredPetType = preferredPetType;
+        this.adoptionStatus = adoptionStatus;
+        this.shelterModel = shelterModel;
+
     }
 
-    public ShelterDTO(ShelterModel model) {
+    public AdopterDTO(AdoptersModel model) {
         this.id = model.getId();
         this.name = model.getName();
         this.address1 = model.getAddress1();
@@ -45,15 +53,17 @@ public class ShelterDTO {
         this.phoneNumber = model.getPhoneNumber();
         this.email = model.getEmail();
         this.imageUrl = model.getImageUrl();
-        this.website = model.getWebsite();
+        this.preferredPetType = model.getPreferredPetType();
+        this.adoptionStatus = model.getAdoptionStatus();
+        this.shelterModel = model.getShelterModel();
 
     }
 
-    public ShelterModel convertToModel() {
-        if (id == null){
-            id=0l;
+    public AdoptersModel convertToModel() {
+        if (id == null) {
+            id = 0l;
         }
-        ShelterModel shelter = new ShelterModel(this.getId(),
+        AdoptersModel adopter = new AdoptersModel(this.getId(),
                 this.getName(),
                 this.getAddress1(),
                 this.getAddress2(),
@@ -63,8 +73,10 @@ public class ShelterDTO {
                 this.getPhoneNumber(),
                 this.getEmail(),
                 this.getImageUrl(),
-                this.getWebsite());
-        return shelter;
+                this.getPreferredPetType(),
+                this.getAdoptionStatus(),
+                this.getShelterModel());
+        return adopter;
     }
 
     public Long getId() {
@@ -146,22 +158,36 @@ public class ShelterDTO {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-    
-      public String getWebsite() {
-        return website;
+
+    public PetTypeEnum getPreferredPetType() {
+        return preferredPetType;
     }
 
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setPreferredPetType(PetTypeEnum preferredPetType) {
+        this.preferredPetType = preferredPetType;
+    }
+
+    public AdoptionStatusEnum getAdoptionStatus() {
+        return adoptionStatus;
+    }
+
+    public void setAdoptionStatus(AdoptionStatusEnum adoptionStatus) {
+        this.adoptionStatus = adoptionStatus;
+    }
+
+    public ShelterModel getShelterModel() {
+        return shelterModel;
+    }
+
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
     }
 
     @Override
     public String toString() {
-        return "ShelterDTO [id=" + id + ", name=" + name + ", address1=" + address1 + ", address2=" + address2
+        return "AdopterDTO [id=" + id + ", name=" + name + ", address1=" + address1 + ", address2=" + address2
                 + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phoneNumber=" + phoneNumber + ", email="
-                + email + ", imageUrl=" + imageUrl + ", website=" + website + "]";
+                + email + ", imageUrl=" + imageUrl + "]";
     }
-
-  
 
 }

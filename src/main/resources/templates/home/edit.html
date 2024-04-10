@@ -5,42 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}" />
+
 </head>
 
 <body>
-    <form action="#" th:action="@{/}" th:object="${task}" method="post">
-        <input type="hidden" th:field="*{taskId}" />
-        <label>Description</label>
-        <input type="text" th:field="*{Description}"><br>
+    <div th:replace="./fragments/headerFragment:: header"></div>
+    <br>
+    <br>
+<h1 th:text="${title}" ></h1>
+    <form
+          action="#"
+          th:action="@{/save}"
+          th:object="${shelter}"
+          method="post"
+        >
+          <input type="hidden" th:field="*{id}" />
+          <label> Name </label>
+          <input type="text" th:field="*{name}" placeholder="Shelter Name" />
+          <br />
+          <label> Address Line 1 </label>
+          <input
+            type="text"
+            th:field="*{address1}"
+            placeholder="Shelter Address Line 1"
+          />
+          <br />
+          <label> Address Line 2 </label>
+          <input
+            type="text"
+            th:field="*{address2}"
+            placeholder="Shelter Address Line 2"
+          />
+          <br />
+          <label> City </label>
+          <input type="text" th:field="*{city}" placeholder="Shelter City" />
+          <br />
+          <label> State </label>
+          <input type="text" th:field="*{state}" placeholder="Shelter State" />
+          <br />
+          <label> Zip </label>
+          <input type="text" th:field="*{zip}" placeholder="Shelter Zip" />
+          <br />
+          <label> Phone Number </label>
+          <input
+            type="text"
+            th:field="*{phoneNumber}"
+            placeholder="Shelter Phone Number"
+          />
+          <br />
+          <label> Email </label>
+          <input type="text" th:field="*{email}" placeholder="Shelter Email" />
+          <br />
+          <label> Image </label>
+          <input
+            type="text"
+            th:field="*{imageUrl}"
+            placeholder="Shelter Image URL"
+          />
+          <br />
+          <label> Website </label>
+          <input
+            type="text"
+            th:field="*{website}"
+            placeholder="Shelter Website URL"
+          />
+          <br />
+          <button type="submit" class="saveButton" th:text="${title}"></button>
+          <a class ="btn" th:href="@{/}">cancel</a>
 
-        <label> Name</label>
-        <select th:field="*{category}">
-            <option th:each="p : ${lstCategory}" th:value="${p}" th:text="${p}"></option>
-        </select><br>
+        </form>
 
-        <label>status</label>
-        <select th:field="*{status}">
-            <option th:each="p : ${lstStatus}" th:value="${p}" th:text="${p}"></option>
-        </select><br>
 
-        <label>priority</label>
-        <select th:field="*{priority}">
-            <option th:each="p : ${lstPriority}" th:value="${p}" th:text="${p}"></option>
-        </select><br>
-
-        <label>dueDate</label>
-        <input type="date" th:field="*{dueDate}"><br>
-
-        <label>Details</label>
-        <input type="text" th:field="*{details}"><br>
-
-        <button type="submit" th:href="@{save/{id}(id=${task.taskId})}">Submit Change</button>
-        <br>
-
-        <td>
-            <a th:href="@{/}">cancel</a>
-        </td>
-    </form>
+    <div th:replace="./fragments/footerFragment :: footer"></div>
 
 </body>
 

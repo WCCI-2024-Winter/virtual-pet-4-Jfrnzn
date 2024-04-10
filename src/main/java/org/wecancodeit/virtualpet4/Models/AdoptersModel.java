@@ -24,20 +24,32 @@ public class AdoptersModel extends ContactModel {
      * @param adoptionStatus
      * @return
      */
+    public AdoptersModel() {
+    }
+
+    public AdoptersModel(Long id, String name, String address1, String address2, String city, String zip, String state,
+            String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType,
+            AdoptionStatusEnum adoptionStatus, ShelterModel shelterModel) {
+        super(id, name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
+        this.preferredPetType = preferredPetType;
+        this.adoptionStatus = adoptionStatus;
+        this.shelterModel = shelterModel;
+    }
 
     public AdoptersModel(Long id, String name, String address1, String address2, String city,
-            String zip, String state, String phoneNumber, String email, String imageUrl, PetTypeEnum petType,
+            String zip, String state, String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType,
             AdoptionStatusEnum adoptionStatus) {
-        super(id,name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
-        this.preferredPetType = petType;
-        this.adoptionStatus = adoptionStatus;
     }
 
-    public AdoptersModel(PetTypeEnum petType) {
-        this.preferredPetType = petType;
+    public AdoptionStatusEnum getAdoptionStatus() {
+        return adoptionStatus;
     }
 
-    public PetTypeEnum getPetType() {
+    public ShelterModel getShelterModel() {
+        return shelterModel;
+    }
+
+    public PetTypeEnum getPreferredPetType() {
         return preferredPetType;
     }
 
