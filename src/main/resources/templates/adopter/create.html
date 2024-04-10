@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}" />
+
+</head>
+
+<body>
+    <div th:replace="./fragments/headerFragment:: header"></div>
+
+    <form action="#" th:action="@{/}" th:object="${adopter}" method="post">
+
+        <div class="content">
+            <h1>New Adopter</h1>
+            <table>
+
+                <th>Name:</th>
+                <td>
+                    <input type="text">
+                </td>
+
+                <tr>
+                    <th>Address 1:</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address 2:</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Zip</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>PhoneNumber</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <td>
+             
+                    <a class="btn" th:href="@{save}">Save</a>
+                    <a class="btn" th:href="@{/}">cancel</a> 
+                </td>
+            </table>
+        </div>
+
+
+
+
+    </form>
+    <div th:replace="./fragments/footerFragment :: footer"></div>
+
+</body>
+
+</html>

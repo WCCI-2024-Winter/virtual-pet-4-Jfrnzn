@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}">
+
+</head>
+
+<body>
+    <div th:replace="./fragments/headerFragment:: header"></div>
+    <br>
+    <h1>Confirm delete</h1>
+    <table>
+        <table>
+            <tr>
+                <th>Name:</th>
+                <td th:text="${adopters.name}"></td>
+            </tr>
+            <tr>
+                <th>Address 1:</th>
+                <td th:text="${adopters.address1}"></td>
+            </tr>
+            <tr>
+                <th>Address 2:</th>
+                <td th:text="${adopters.address2}"></td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td th:text="${{adopters.city}}"></td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+                <td th:text="${{adopters.zip}}"></td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td th:text="${{adopters.state}}"></td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td th:text="${{adopters.phoneNumber}}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td th:text="${{adopters.email}}"></td>
+            </tr>
+   
+        </table>
+
+<!-- adopter not adopters -->
+        <div> <a class ="btn" th:href="@{/adopter/delete/{id}(id=${adopters.id})}">Delete</a>
+        <a class ="btn" th:href="@{/}">cancel</a></div>
+
+        <div th:replace="./fragments/footerFragment :: footer"></div>
+
+</body>
+
+</html>
