@@ -19,13 +19,13 @@ public class AdopterDTO {
     private String imageUrl;
     public PetTypeEnum preferredPetType;
     public AdoptionStatusEnum adoptionStatus;
-    public ShelterModel shelterModel;
+  
 
     public AdopterDTO() {
     }
 
     public AdopterDTO(Long id, String name, String address1, String address2, String city, String zip, String state,
-            String phoneNumber, String email, String imageUrl) {
+            String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType, AdoptionStatusEnum adoptionStatus ) {
         this.id = id;
         this.name = name;
         this.address1 = address1;
@@ -38,7 +38,7 @@ public class AdopterDTO {
         this.imageUrl = imageUrl;
         this.preferredPetType = preferredPetType;
         this.adoptionStatus = adoptionStatus;
-        this.shelterModel = shelterModel;
+      
 
     }
 
@@ -55,7 +55,7 @@ public class AdopterDTO {
         this.imageUrl = model.getImageUrl();
         this.preferredPetType = model.getPreferredPetType();
         this.adoptionStatus = model.getAdoptionStatus();
-        this.shelterModel = model.getShelterModel();
+      
 
     }
 
@@ -74,8 +74,8 @@ public class AdopterDTO {
                 this.getEmail(),
                 this.getImageUrl(),
                 this.getPreferredPetType(),
-                this.getAdoptionStatus(),
-                this.getShelterModel());
+                this.getAdoptionStatus()
+                );
         return adopter;
     }
 
@@ -173,14 +173,6 @@ public class AdopterDTO {
 
     public void setAdoptionStatus(AdoptionStatusEnum adoptionStatus) {
         this.adoptionStatus = adoptionStatus;
-    }
-
-    public ShelterModel getShelterModel() {
-        return shelterModel;
-    }
-
-    public void setShelterModel(ShelterModel shelterModel) {
-        this.shelterModel = shelterModel;
     }
 
     @Override

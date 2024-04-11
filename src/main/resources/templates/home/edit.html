@@ -6,20 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
 
 </head>
-
+  
 <body>
-    <div th:replace="./fragments/headerFragment:: header"></div>
+  <div th:replace="./fragments/headerFragment:: header"></div>
     <br>
     <br>
-<h1 th:text="${title}" ></h1>
-    <form
+
+<h1 th:text="${title}" ></h1> 
+    <form   
           action="#"
           th:action="@{/save}"
           th:object="${shelter}"
           method="post"
-        >
+        ><br>
+        <br>
+        <br><br><br><br><br><br><br>
           <input type="hidden" th:field="*{id}" />
           <label> Name </label>
           <input type="text" th:field="*{name}" placeholder="Shelter Name" />
@@ -75,6 +79,7 @@
           <a class ="btn" th:href="@{/}">cancel</a>
 
         </form>
+       
 
 
     <div th:replace="./fragments/footerFragment :: footer"></div>

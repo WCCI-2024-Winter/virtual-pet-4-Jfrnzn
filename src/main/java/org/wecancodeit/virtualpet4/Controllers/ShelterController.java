@@ -47,7 +47,7 @@ public class ShelterController {
         shelterRepository.deleteById(id);
         return "redirect:/";
     }
-/**edit will not save due to save not working  */
+
     @GetMapping("edit/{id}")
     public String editShelter(@PathVariable Long id, Model model) throws Exception {
         ShelterModel shelter =shelterRepository.getById(id);
@@ -55,7 +55,7 @@ public class ShelterController {
         model.addAttribute("title", "Edit Shelter");
         return "home/edit";
     }
-/**save not currently working. getting a 405 method as of EOD */
+
     @PostMapping("save")
     public String save(@ModelAttribute("shelter") ShelterDTO dto) throws Exception {
         shelterRepository.SaveShelter(dto.convertToModel());

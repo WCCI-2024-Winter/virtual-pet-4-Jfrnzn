@@ -7,17 +7,31 @@ h1{
 body{
     display: flex;
     justify-content: center;
+    
    
 }
-.headerFragment{
+/* .headerFragment{
     display: flex;
     align-content: end;
-}
+} */
 table{
      border-collapse: collapse;
+     justify-content: center;
      
      
 }
 td{
     padding: 10px;
+}
+/* .delete-btn{ 
+    display: flex;
+    justify-content: end;
+} */
+.mainCreateButton{
+    display: flex;
+    justify-content: center;
+}
+.topLinks{
+    display: flex;
+    justify-content: space-around;
 }

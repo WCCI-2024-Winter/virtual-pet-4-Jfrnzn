@@ -40,6 +40,20 @@
       font-size: 16px;
   }
 
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
   /* Hover effect */
   .btn:hover {
       background-color: #0056b3;
@@ -66,6 +80,11 @@
       /* Darker red color */
   }
 
+  /* .mainCreateButton{
+    display: flex;
+    justify-content: center;
+} */
+
   /* styles.css */
 
   /* Style the header */
@@ -90,7 +109,7 @@
   }
 
   .content {
-      margin-top: 80px;
+      margin-top: 100px;
       /* Adjust according to header height */
       height: calc(100vh - 120px);
       /* Set height to fill the viewport minus header height */
@@ -109,6 +128,7 @@
 
   /* Style the heading */
   header h1 {
+
       margin: 0;
       /* Remove default margin */
   }

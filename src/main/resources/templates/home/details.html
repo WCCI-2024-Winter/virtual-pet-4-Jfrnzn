@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
 </head>
 
 <body>
@@ -49,14 +50,70 @@
                 <th>Website</th>
                 <td th:text="${{shelter.website}}"></td>
             </tr>
-
+<!-- beginning of option al table  -->
         </table>
-        <div><a class="btn" th:href="@{/}">Home</a>
-        <!-- <a class="btn" th:href="@{edit/{id}(id=${shelter.id})}">Edit</a> -->
+        <div th:if="${shelter.roboticPets.size()>0}">
+            <h2>Robotic Pets</h2>
+            <table class="main_table">
+                <thead>
+                <th class="${main_td}">Name</th>
+                <th class="${main_td}">Pet Type</th>
+                <th class="${main_td}">Picture</th>
+                <th class="${main_td}">Model </th>
+                <th class="${main_td}">Manufacturer</th>
+                <th class="${main_td}">Energy Level</th>
+                <th class="${main_td}">Oil Level</th>
+                <th class="${main_td}">Health</th>
+                </thead>
+                
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
 
+            </table>
+        </div>
+        </table>
+        <div th:if="${shelter.organicPets.size()>0}">
+            <h2>Organic Pets</h2>
+            <table class="main_table">
+                <thead>
+                <th class="${main_td}">Name</th>
+                <th class="${main_td}">Pet Type</th>
+                <th class="${main_td}">Picture</th>
+                <th class="${main_td}">Breed </th>
+                <th class="${main_td}">Age</th>
+                <th class="${main_td}">Health</th>
+                <th class="${main_td}">Mood</th>
+                <th class="${main_td}">Temperment</th>
+                <th class="${main_td}">Fixed</th>
+                </thead>
+                
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+                <td class="main_td" th:text="${pet}"></td>
+
+                  
+    
+            </table>
+
+        </div>
+
+       
+        <!-- <a class="btn" th:href="@{edit/{id}(id=${shelter.id})}">Edit</a> -->
+ <div><a class="btn" th:href="@{/}">Home</a>
     </div>
 
-    <div th:replace="./fragments/footerFragment:: footer"></div>
+</div>
 </body>
-
+<div th:replace="./fragments/footerFragment:: footer"></div>
 </html>

@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/VP4.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}">
 
 </head>
 
+
 <body>
-    <div th:replace="./fragments/headerFragment:: header"></div>
-    <br>
+<div th:replace="./fragments/headerFragment:: header"></div>
+<div class="content">
     <h1>Confirm delete</h1>
     <table>
         <table>
@@ -49,13 +51,17 @@
             </tr>
    
         </table>
+       
+ <div> <a class ="delete-btn" th:href="@{/adopter/delete/{id}(id=${adopters.id})}">Delete</a>
+        <a class ="btn" th:href="@{/adopter}">cancel</a></div>
 
-<!-- adopter not adopters -->
-        <div> <a class ="btn" th:href="@{/adopter/delete/{id}(id=${adopters.id})}">Delete</a>
-        <a class ="btn" th:href="@{/}">cancel</a></div>
+    
+    </div>  
+     
+
+</body> 
+        
+
 
         <div th:replace="./fragments/footerFragment :: footer"></div>
-
-</body>
-
 </html>

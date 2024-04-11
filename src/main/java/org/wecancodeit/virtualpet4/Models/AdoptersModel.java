@@ -29,18 +29,14 @@ public class AdoptersModel extends ContactModel {
 
     public AdoptersModel(Long id, String name, String address1, String address2, String city, String zip, String state,
             String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType,
-            AdoptionStatusEnum adoptionStatus, ShelterModel shelterModel) {
+            AdoptionStatusEnum adoptionStatus) {
         super(id, name, address1, address2, city, zip, state, phoneNumber, email, imageUrl);
         this.preferredPetType = preferredPetType;
         this.adoptionStatus = adoptionStatus;
-        this.shelterModel = shelterModel;
+        
     }
 
-    public AdoptersModel(Long id, String name, String address1, String address2, String city,
-            String zip, String state, String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType,
-            AdoptionStatusEnum adoptionStatus) {
-    }
-
+ 
     public AdoptionStatusEnum getAdoptionStatus() {
         return adoptionStatus;
     }
