@@ -3,6 +3,10 @@ h1{
     display: flex;
     justify-content: center;
 }
+h2{
+    display: flex;
+    justify-content: center;
+}
 
 body{
     display: flex;
@@ -20,6 +24,10 @@ table{
      
      
 }
+.shelterDetails{
+    display: flex;
+    justify-content: center;
+}
 td{
     padding: 10px;
 }
@@ -35,3 +43,9 @@ td{
     display: flex;
     justify-content: space-around;
 }
+.shelterHomeButton{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+

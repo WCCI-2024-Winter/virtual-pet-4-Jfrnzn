@@ -13,7 +13,7 @@
     <div th:replace="./fragments/headerFragment:: header"></div>
     <div class="content">
         <h1>Shelter Details</h1>
-        <table>
+        <table class="shelterDetails">
             <tr>
                 <th>Name:</th>
                 <td th:text="${shelter.name}"></td>
@@ -50,31 +50,33 @@
                 <th>Website</th>
                 <td th:text="${{shelter.website}}"></td>
             </tr>
-<!-- beginning of option al table  -->
+            <!-- beginning of option al table  -->
         </table>
         <div th:if="${shelter.roboticPets.size()>0}">
             <h2>Robotic Pets</h2>
             <table class="main_table">
                 <thead>
-                <th class="${main_td}">Name</th>
-                <th class="${main_td}">Pet Type</th>
-                <th class="${main_td}">Picture</th>
-                <th class="${main_td}">Model </th>
-                <th class="${main_td}">Manufacturer</th>
-                <th class="${main_td}">Energy Level</th>
-                <th class="${main_td}">Oil Level</th>
-                <th class="${main_td}">Health</th>
+                    <th class="${main_td}">Name</th>
+                    <th class="${main_td}">Pet Type</th>
+                    <th class="${main_td}">Picture</th>
+                    <th class="${main_td}">Model </th>
+                    <th class="${main_td}">Manufacturer</th>
+                    <th class="${main_td}">Energy Level</th>
+                    <th class="${main_td}">Oil Level</th>
+                    <th class="${main_td}">Health</th>
                 </thead>
-                
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
 
+
+                <tr th:each="robotic : ${shelter.roboticPets}">
+                    <td class="main_td" th:text="${robotic.name}"></td>
+                    <td class="main_td" th:text="${robotic.petType}"></td>
+                    <td class="main_td" img th:src="@{robotic.imageUrl}"></td>
+                    <td class="main_td" th:text="${robotic.model}"></td>
+                    <td class="main_td" th:text="${robotic.manufacturer}"></td>
+                    <td class="main_td" th:text="${robotic.energyLevel}"></td>
+                    <td class="main_td" th:text="${robotic.oilLevel}"></td>
+                    <td class="main_td" th:text="${robotic.roboticPetHealth}"></td>
+                </tr>
             </table>
         </div>
         </table>
@@ -82,38 +84,40 @@
             <h2>Organic Pets</h2>
             <table class="main_table">
                 <thead>
-                <th class="${main_td}">Name</th>
-                <th class="${main_td}">Pet Type</th>
-                <th class="${main_td}">Picture</th>
-                <th class="${main_td}">Breed </th>
-                <th class="${main_td}">Age</th>
-                <th class="${main_td}">Health</th>
-                <th class="${main_td}">Mood</th>
-                <th class="${main_td}">Temperment</th>
-                <th class="${main_td}">Fixed</th>
+                    <th class="${main_td}">Name</th>
+                    <th class="${main_td}">Pet Type</th>
+                    <th class="${main_td}">Picture</th>
+                    <th class="${main_td}">Breed </th>
+                    <th class="${main_td}">Age</th>
+                    <th class="${main_td}">Health</th>
+                    <th class="${main_td}">Mood</th>
+                    <th class="${main_td}">Temperment</th>
+                    <th class="${main_td}">Fixed</th>
                 </thead>
-                
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
-                <td class="main_td" th:text="${pet}"></td>
 
-                  
-    
+                <tr th:each="organic : ${shelter.organicPets}">
+                    <td class="main_td" th:text="${organic.name}"></td>
+                     <td class="main_td" th:text="${organic.petType}"></td>
+                    <td class="main_td" img th:src="@{organic.imageUrl}"></td>
+                    <td class="main_td" th:text="${organic.breed}"></td>
+                    <td class="main_td" th:text="${organic.petAge}"></td>
+                    <td class="main_td" th:text="${organic.PetHealth}"></td>
+                    <td class="main_td" th:text="${organic.petMood}"></td>
+                    <td class="main_td" th:text="${organic.petTemperment}"></td>
+                    <td class="main_td" th:text="${organic.petFixed}"></td> 
+                </tr>
+
             </table>
 
         </div>
 
-       
-        <!-- <a class="btn" th:href="@{edit/{id}(id=${shelter.id})}">Edit</a> -->
- <div><a class="btn" th:href="@{/}">Home</a>
-    </div>
 
-</div>
+        <!-- <a class="btn" th:href="@{edit/{id}(id=${shelter.id})}">Edit</a> -->
+        <div class="shelterHomeButton"><a class="btn" th:href="@{/}">Home</a>
+        </div>
+
+    </div>
 </body>
 <div th:replace="./fragments/footerFragment:: footer"></div>
+
 </html>
