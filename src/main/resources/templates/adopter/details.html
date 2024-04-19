@@ -52,16 +52,24 @@
                 <td th:text="${{adopters.preferredPetType}}"></td>
             </tr>
             <tr>
-                <th>Preferred Pet Type</th>
+                <th>Adoption Status</th>
                 <td th:text="${{adopters.adoptionStatus}}"></td>
+            </tr>
+            <tr>
+                <th>Shelter</th>
+            <td th:text="${{adopters.shelterModel.name}}"></td>
             </tr>
             <br>
           
 
             <br>
         </table>
-        <!-- <td><a class="btn" th:href="@{adopter/edit/{id}(id=${adopters.id})}">Edit</a></td> -->
-       <a class="btn" th:href="@{/adopter}">Cancel</a>
+      
+       <div class="adopterButtons">        
+        <a class="btn" th:href="@{/adopter/edit/{id}(id=${adopters.id})}">Edit</a>
+        <a class="btn" th:href="@{/adopter}">Cancel</a>
+    </div>
+     
     </div>
     
     

@@ -56,7 +56,11 @@
         <select th:field="*{adoptionStatus}">
             <option th:each="p : ${lstadoptionStatus}" th:value="${p}" th:text="${p}"></option>
         </select><br>
-
+        <label>Shelter</label>
+    <select th:field="*{ShelterId}">
+             <option th:each= "p : ${shelters}" th:value = "${p.id}" th:text = "${p.name}"
+            /> 
+            </select>  
         <br />
         <button type="submit">Save</button>
             <a class ="btn" th:href="@{/adopter}">Cancel</a>

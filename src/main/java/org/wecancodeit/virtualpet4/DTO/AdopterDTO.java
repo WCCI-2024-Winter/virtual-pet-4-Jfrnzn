@@ -17,15 +17,18 @@ public class AdopterDTO {
     private String phoneNumber;
     private String email;
     private String imageUrl;
-    public PetTypeEnum preferredPetType;
-    public AdoptionStatusEnum adoptionStatus;
-  
+    private PetTypeEnum preferredPetType;
+    private AdoptionStatusEnum adoptionStatus;
+    private ShelterModel shelterModel;
+    private Long ShelterId;
 
     public AdopterDTO() {
     }
 
+    /** data transfer object for adopters */
     public AdopterDTO(Long id, String name, String address1, String address2, String city, String zip, String state,
-            String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType, AdoptionStatusEnum adoptionStatus ) {
+            String phoneNumber, String email, String imageUrl, PetTypeEnum preferredPetType,
+            AdoptionStatusEnum adoptionStatus) {
         this.id = id;
         this.name = name;
         this.address1 = address1;
@@ -38,7 +41,6 @@ public class AdopterDTO {
         this.imageUrl = imageUrl;
         this.preferredPetType = preferredPetType;
         this.adoptionStatus = adoptionStatus;
-      
 
     }
 
@@ -55,7 +57,10 @@ public class AdopterDTO {
         this.imageUrl = model.getImageUrl();
         this.preferredPetType = model.getPreferredPetType();
         this.adoptionStatus = model.getAdoptionStatus();
-      
+        if (model.getShelterModel() != null) {
+            this.shelterModel = model.getShelterModel();
+            this.ShelterId = this.shelterModel.getId();
+        }
 
     }
 
@@ -74,8 +79,8 @@ public class AdopterDTO {
                 this.getEmail(),
                 this.getImageUrl(),
                 this.getPreferredPetType(),
-                this.getAdoptionStatus()
-                );
+                this.getAdoptionStatus());
+                adopter.setShelterModel(this.shelterModel);
         return adopter;
     }
 
@@ -175,11 +180,28 @@ public class AdopterDTO {
         this.adoptionStatus = adoptionStatus;
     }
 
+    public ShelterModel getShelterModel() {
+        return shelterModel;
+    }
+
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
+    }
+    public Long getShelterId() {
+        return ShelterId;
+    }
+
+    public void setShelterId(Long shelterId) {
+        ShelterId = shelterId;
+    }
+
+
     @Override
     public String toString() {
         return "AdopterDTO [id=" + id + ", name=" + name + ", address1=" + address1 + ", address2=" + address2
                 + ", city=" + city + ", zip=" + zip + ", state=" + state + ", phoneNumber=" + phoneNumber + ", email="
                 + email + ", imageUrl=" + imageUrl + "]";
     }
+
 
 }

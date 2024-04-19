@@ -83,6 +83,7 @@
         <div th:if="${shelter.organicPets.size()>0}">
             <h2>Organic Pets</h2>
             <table class="main_table">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <thead>
                     <th class="${main_td}">Name</th>
                     <th class="${main_td}">Pet Type</th>
@@ -91,14 +92,15 @@
                     <th class="${main_td}">Age</th>
                     <th class="${main_td}">Health</th>
                     <th class="${main_td}">Mood</th>
-                    <th class="${main_td}">Temperment</th>
+                    <th class="${main_td}">Temperament</th>
                     <th class="${main_td}">Fixed</th>
                 </thead>
 
+                
                 <tr th:each="organic : ${shelter.organicPets}">
                     <td class="main_td" th:text="${organic.name}"></td>
                      <td class="main_td" th:text="${organic.petType}"></td>
-                    <td class="main_td" img th:src="@{organic.imageUrl}"></td>
+                    <td class="main_td" img th:src="@{organic.imageUrl}" alt="dog"></td>
                     <td class="main_td" th:text="${organic.breed}"></td>
                     <td class="main_td" th:text="${organic.petAge}"></td>
                     <td class="main_td" th:text="${organic.PetHealth}"></td>
@@ -113,7 +115,10 @@
 
 
         <!-- <a class="btn" th:href="@{edit/{id}(id=${shelter.id})}">Edit</a> -->
-        <div class="shelterHomeButton"><a class="btn" th:href="@{/}">Home</a>
+       
+        <div class="shelterHomeButton">
+            <a class="btn" th:href="@{/edit/{id}(id=${shelter.id})}">Edit</a>
+            <a class="btn" th:href="@{/}">Home</a>
         </div>
 
     </div>

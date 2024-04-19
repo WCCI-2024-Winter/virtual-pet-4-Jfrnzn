@@ -3,6 +3,7 @@ package org.wecancodeit.virtualpet4.Repositories;
 import java.io.IOException;
 import java.util.*;
 
+import org.wecancodeit.virtualpet4.DTO.ShelterDTO;
 import org.wecancodeit.virtualpet4.Models.ShelterModel;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -29,15 +30,25 @@ public class ShelterRepository extends ClientHttp {
             String jsonString = getURL(urlPath);
             shelterList = objectMapper.readValue(jsonString, new TypeReference<List<ShelterModel>>() {
             });
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return shelterList;
     }
 
-  
+    public Collection<ShelterDTO> getShelterLookUp() throws Exception {
+        List<ShelterDTO> result = new ArrayList<>();
+        try {
+            String jsonString = getURL("ShelterLookup");/** make sure this is correct */
+            result = objectMapper.readValue(jsonString, new TypeReference<List<ShelterDTO>>() {
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
-    public boolean deleteById(Long id) throws Exception{
+    public boolean deleteById(Long id) throws Exception {
         deleteObject(id);
         return true;
     }
@@ -46,14 +57,13 @@ public class ShelterRepository extends ClientHttp {
         try {
             String json = objectMapper.writeValueAsString(model);
             String result = saveObject(json);
-            model = objectMapper.readValue(result, new TypeReference<ShelterModel>() {});
+            model = objectMapper.readValue(result, new TypeReference<ShelterModel>() {
+            });
         } catch (IOException ex) {
             ex.printStackTrace();
         }
         return model;
 
     }
-
- 
 
 }

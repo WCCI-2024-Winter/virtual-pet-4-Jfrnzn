@@ -41,6 +41,12 @@ public class AdoptersModel extends ContactModel {
         return adoptionStatus;
     }
 
+    
+
+    public void setShelterModel(ShelterModel shelterModel) {
+        this.shelterModel = shelterModel;
+    }
+
     public ShelterModel getShelterModel() {
         return shelterModel;
     }
@@ -53,6 +59,11 @@ public class AdoptersModel extends ContactModel {
     public String toString() {
         return "AdoptersModel [preferredPetType=" + preferredPetType + ", adoptionStatus=" + adoptionStatus
                 + ", shelterModel=" + shelterModel + "]";
+    }
+
+    public Object getShelterModel(ShelterModel shelterModel2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getShelterModel'");
     }
 
 }

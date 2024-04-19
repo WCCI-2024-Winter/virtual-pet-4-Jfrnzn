@@ -3,9 +3,7 @@ package org.wecancodeit.virtualpet4.Repositories;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
-
 import org.wecancodeit.virtualpet4.Models.AdoptersModel;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
